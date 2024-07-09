@@ -1,6 +1,6 @@
 # Uber Project
 
-Welcome to the Uber Project! This is a React Native app developed for iOS. The app simulates some functionalities similar to Uber. 
+Welcome to the Uber Project! This is a React Native app developed for iOS that simulates some functionalities similar to Uber.
 
 ## Project Link
 
@@ -41,7 +41,7 @@ npm install
 3. **Start the project**
 
 ```bash
-npm expo start
+npx expo start
 ```
 
 4. **Run the app on an iOS simulator**
@@ -65,10 +65,26 @@ Here is a list of all the dependencies used in this project along with their ver
 - **react-native-web**: ~0.19.10
 - **react-redux**: ^9.1.2
 - **twrnc**: ^4.3.0
+- **@react-navigation/native**: ^6.1.17
+- **@react-navigation/stack**: ^6.4.0
+- **react-native-dotenv**: ^3.4.11
+- **react-native-gesture-handler**: ^2.17.1
+- **react-native-google-places-autocomplete**: ^2.5.6
+- **react-native-maps**: ^1.15.6
+- **react-native-maps-directions**: ^1.9.0
+- **react-native-screens**: 3.31.1
 
 ## Running the App
 
 To run the app, ensure you have Xcode installed on your machine for iOS simulation. After starting the project with `npm expo start`, type `i` to launch the app in the iOS simulator.
+
+## Google Maps API Key
+
+You will need to create a Google account and enter your billing information to generate your private key for accessing the distance matrix, time duration, etc. Place your API key in a file named `.env` with the following format:
+
+```
+GOOGLE_MAP_API_KEY=your_api_key_here
+```
 
 ## License
 
