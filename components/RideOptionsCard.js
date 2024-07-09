@@ -39,6 +39,8 @@ const RideOptionsCard = () => {
     },
   ]
 
+  const SURGE_CHARGE_RATE = 1.5;
+
   return (
     <SafeAreaView style={tw`bg-white flex-grow `}>
       <View style={{ marginTop: -70 }}>
@@ -72,13 +74,24 @@ const RideOptionsCard = () => {
             />
             <View style={tw`-ml-6`}> 
                 <Text style={tw`text-xl font-semibold`}>{title}</Text>
-                <Text>{travelTimeInformation?.duration.text} Travel Time</Text>
+                <Text>{travelTimeInformation?.duration?.text} Travel Time</Text>
             </View>
-            <Text style={tw`text-xl`}>99</Text>
+            <Text style={tw`text-xl`}>
+
+              {new Intl.NumberFormat('en-gb',{
+                style: 'currency',
+                currency: 'MAD',
+              })
+              .format(
+                (travelTimeInformation?.duration.value * SURGE_CHARGE_RATE * multiplier)/100
+              )
+              }
+              
+            </Text>
           </TouchableOpacity>
         )}
       />
-      <View>
+      <View style={tw`mt-auto border-t border-gray-200`}>
         <TouchableOpacity
         disabled={!selected}
         style={tw`bg-black py-3 m-3 rounded-full ${!selected && 'bg-gray-300'}`}>
